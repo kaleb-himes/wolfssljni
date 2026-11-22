@@ -1397,6 +1397,14 @@ JNIEXPORT jint JNICALL Java_com_wolfssl_WolfSSL_isEnabledEMSAlwaysRequired
 
 /*
  * Class:     com_wolfssl_WolfSSL
+ * Method:    isEnabledX25519HybridOnly
+ * Signature: ()I
+ */
+JNIEXPORT jint JNICALL Java_com_wolfssl_WolfSSL_isEnabledX25519HybridOnly
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     com_wolfssl_WolfSSL
  * Method:    getProtocols
  * Signature: ()[Ljava/lang/String;
  */

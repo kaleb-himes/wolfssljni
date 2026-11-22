@@ -2064,6 +2064,10 @@ public class WolfSSL {
      *  Secret (WOLFSSL_EMS_ALWAYS_REQUIRED, FIPS v7), otherwise 0. */
     public static native int isEnabledEMSAlwaysRequired();
 
+    /** @return 1 if native wolfSSL offers X25519 only inside an ML-KEM
+     *  hybrid group (WC_X25519_HYBRID_ONLY, FIPS v7), otherwise 0. */
+    public static native int isEnabledX25519HybridOnly();
+
     /**
      * Checks which protocols where built into wolfSSL
      *

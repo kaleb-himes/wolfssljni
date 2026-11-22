@@ -695,7 +695,11 @@ public class WolfSSLContextTest {
             }
             if (WolfSSL.Curve25519Enabled()) {
                 ret = ctx.useSupportedCurves(x25519Curve);
-                if (ret != WolfSSL.SSL_SUCCESS &&
+                if (WolfSSL.isEnabledX25519HybridOnly() == 1) {
+                    /* X25519 is only offered inside an ML-KEM hybrid */
+                    assertEquals("useSupportedCurves(x25519Curve) with " +
+                        "X25519 hybrid only", WolfSSL.BAD_FUNC_ARG, ret);
+                } else if (ret != WolfSSL.SSL_SUCCESS &&
                     ret != WolfSSL.NOT_COMPILED_IN) {
                     fail("useSupportedCurves(x25519Curve) failed");
                 }

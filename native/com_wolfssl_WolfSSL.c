@@ -2904,6 +2904,19 @@ JNIEXPORT jint JNICALL Java_com_wolfssl_WolfSSL_isEnabledEMSAlwaysRequired
 #endif
 }
 
+JNIEXPORT jint JNICALL Java_com_wolfssl_WolfSSL_isEnabledX25519HybridOnly
+  (JNIEnv* jenv, jclass jcl)
+{
+    (void)jenv;
+    (void)jcl;
+
+#ifdef WC_X25519_HYBRID_ONLY
+    return 1;
+#else
+    return 0;
+#endif
+}
+
 JNIEXPORT jobjectArray JNICALL Java_com_wolfssl_WolfSSL_getProtocols
   (JNIEnv* jenv, jclass jcl)
 {
